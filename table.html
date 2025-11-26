@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LMS 12 - Table</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a1a;--accent:#ffd60a;--neon:#00ffff;--panel:#11112a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);font-family:'Press Start 2P',cursive;color:var(--accent)}
+header{position:sticky;top:0;background:var(--panel);padding:12px 0;text-align:center;z-index:1000;border-bottom:3px solid rgba(0,255,255,0.03)}
+nav{display:flex;justify-content:space-evenly;align-items:center;gap:10px;overflow-x:auto;padding:0 8px}
+nav a{color:var(--accent);text-decoration:none;text-transform:uppercase;white-space:nowrap;font-size:14px;padding:6px 10px}
+nav a.active{ background:var(--accent); color:#0a0a1a; border:3px solid var(--neon); padding:10px 14px; box-shadow:4px 4px 0 #000, inset 0 0 6px #fff; border-radius:4px; }
+h1{font-size:48px;text-align:center;margin:1rem 0;color:var(--accent);text-shadow:0 0 10px var(--accent)}
+table{width:90%;margin:2rem auto;border-collapse:collapse;font-size:12px}
+th, td{border:1px solid var(--neon);padding:6px;text-align:center}
+th{background:var(--panel);color:var(--neon)}
+tr:nth-child(even){background:#1b1b3a}
+tr:nth-child(odd){background:#2a2a4c}
+@media (max-width:720px){ h1{font-size:36px} table{font-size:11px} }
+</style>
+</head>
+<body>
+<header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="predict.html">Predict</a>
+  <a href="table.html" class="active">Table</a>
+  <a href="rules.html">Rules</a>
+</nav>
+</header>
+
+<h1>LMS 12</h1>
+
+<table>
+<tr><th>Player</th><th>Total Points</th></tr>
+<tr><td>Bill</td><td>0</td></tr>
+<tr><td>Crosbo</td><td>0</td></tr>
+<tr><td>Ingz</td><td>0</td></tr>
+<tr><td>Kabz</td><td>0</td></tr>
+<tr><td>Kit</td><td>0</td></tr>
+<tr><td>Locky</td><td>0</td></tr>
+<tr><td>Stoobs</td><td>0</td></tr>
+<tr><td>T-City</td><td>0</td></tr>
+</table>
+
+</body>
+</html>
