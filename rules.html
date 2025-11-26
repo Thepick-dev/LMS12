@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LMS 12 - Rules</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0a0a1a;--accent:#ffd60a;--neon:#00ffff;--panel:#11112a}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);font-family:'Press Start 2P',cursive;color:var(--accent)}
-header{position:sticky;top:0;background:var(--panel);padding:12px 0;text-align:center;z-index:1000;border-bottom:3px solid rgba(0,255,255,0.03)}
-nav{display:flex;justify-content:space-evenly;align-items:center;gap:10px;overflow-x:auto;padding:0 8px}
-nav a{color:var(--accent);text-decoration:none;text-transform:uppercase;white-space:nowrap;font-size:14px;padding:6px 10px}
-nav a.active{ background:var(--accent); color:#0a0a1a; border:3px solid var(--neon); padding:10px 14px; box-shadow:4px 4px 0 #000, inset 0 0 6px #fff; border-radius:4px; }
-h1{font-size:48px;text-align:center;margin:1rem 0;color:var(--accent);text-shadow:0 0 10px var(--accent)}
-.content{width:90%;margin:2rem auto;font-size:12px;line-height:1.5;text-align:justify}
-table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:12px}
-th, td{border:1px solid var(--neon);padding:6px;text-align:center}
-th{background:var(--panel);color:var(--neon)}
-tr:nth-child(even){background:#1b1b3a}
-tr:nth-child(odd){background:#2a2a4c}
-
-/* glow effect for 100 point row */
-.tr-glow { box-shadow: 0 0 18px 2px rgba(255,215,0,0.6) inset, 0 0 8px rgba(255,215,0,0.3); border:2px solid #ffd60a; animation: pulse 1.6s infinite; }
-@keyframes pulse { 0%{filter:brightness(1)}50%{filter:brightness(1.18)}100%{filter:brightness(1)} }
-
-@media (max-width:720px){ h1{font-size:36px} .content{font-size:11px} }
+  body {margin:0; background:#0a0a1a; font-family:'Press Start 2P', cursive; color:#ffd60a;}
+  header {position:sticky; top:0; background:#11112a; padding:1rem 0; text-align:center; z-index:1000;}
+  nav {display:flex; justify-content:space-evenly; flex-wrap:nowrap; overflow-x:auto;}
+  nav a {color:#ffd60a; text-decoration:none; text-transform:uppercase; white-space:nowrap; font-size:14px; transition:0.3s;}
+  nav a:hover {color:#00ffff; text-shadow:0 0 10px #00ffff;}
+  h1 {font-size:48px; text-align:center; margin:1rem 0; color:#ffd60a; text-shadow:0 0 10px #ffd60a;}
+  .content {width:90%; margin:2rem auto; font-size:12px; line-height:1.5; text-align:justify;}
+  table {width:100%; border-collapse:collapse; margin-top:1rem; font-size:12px;}
+  th, td {border:1px solid #00ffff; padding:4px; text-align:center;}
+  th {background:#11112a; color:#00ffff;}
+  tr:nth-child(even) {background:#1b1b3a;}
+  tr:nth-child(odd) {background:#2a2a4c;}
+  .glow {text-shadow:0 0 8px #00ffff,0 0 16px #00ffff,0 0 24px #00ffff;}
+@media (max-width:480px){
+  nav{gap:4px; padding:0 4px;}
+}
 </style>
 </head>
 <body>
@@ -34,7 +30,7 @@ tr:nth-child(odd){background:#2a2a4c}
     <a href="index.html">Home</a>
     <a href="predict.html">Predict</a>
     <a href="table.html">Table</a>
-    <a href="rules.html" class="active">Rules</a>
+    <a href="rules.html">Rules</a>
   </nav>
 </header>
 
@@ -43,54 +39,4 @@ tr:nth-child(odd){background:#2a2a4c}
 <div class="content">
 <p>At the start of each gameweek, pick a team you think will win and a player you think will score and assist. You can only pick each team and player once throughout the competition. Points are awarded based on your selected team’s result according to the table below.</p>
 
-<p>The teams are split into quartiles based on league position at the start of the gameweek. <strong>Bravery is rewarded</strong> — away wins against higher quartile teams are worth more! Players score points for any goals and assists. Use Haaland wisely!</p>
-
-<p>The competition lasts until the end of the season. The player with the most points at the end wins. What constitutes a gameweek is at the organiser’s discretion.</p>
-
-<p><strong>BE BRAVE — COWARDICE WILL GET YOU NOWHERE!</strong></p>
-
-<table>
-<tr><th>Result/Venue</th><th>Q-Gap</th><th>Team Points</th></tr>
-
-<!-- Any loss row added as requested -->
-<tr><td>Any loss</td><td>—</td><td>0</td></tr>
-
-<tr><td>W/H</td><td>+3</td><td>90</td></tr>
-<tr><td>W/H</td><td>+2</td><td>80</td></tr>
-<tr><td>W/H</td><td>+1</td><td>70</td></tr>
-<tr><td>W/H</td><td>0</td><td>60</td></tr>
-<tr><td>W/H</td><td>-1</td><td>50</td></tr>
-<tr><td>W/H</td><td>-2</td><td>40</td></tr>
-<tr><td>W/H</td><td>-3</td><td>30</td></tr>
-
-<!-- W/A +3 is the 100 point row - make it glow -->
-<tr class="tr-glow"><td>W/A</td><td>+3</td><td>100</td></tr>
-<tr><td>W/A</td><td>+2</td><td>90</td></tr>
-<tr><td>W/A</td><td>+1</td><td>80</td></tr>
-<tr><td>W/A</td><td>0</td><td>70</td></tr>
-<tr><td>W/A</td><td>-1</td><td>60</td></tr>
-<tr><td>W/A</td><td>-2</td><td>50</td></tr>
-<tr><td>W/A</td><td>-3</td><td>40</td></tr>
-
-<tr><td>D/H</td><td>+3</td><td>36</td></tr>
-<tr><td>D/H</td><td>+2</td><td>32</td></tr>
-<tr><td>D/H</td><td>+1</td><td>28</td></tr>
-<tr><td>D/H</td><td>0</td><td>24</td></tr>
-<tr><td>D/H</td><td>-1</td><td>20</td></tr>
-<tr><td>D/H</td><td>-2</td><td>16</td></tr>
-<tr><td>D/H</td><td>-3</td><td>12</td></tr>
-
-<tr><td>D/A</td><td>+3</td><td>42</td></tr>
-<tr><td>D/A</td><td>+2</td><td>36</td></tr>
-<tr><td>D/A</td><td>+1</td><td>30</td></tr>
-<tr><td>D/A</td><td>0</td><td>24</td></tr>
-<tr><td>D/A</td><td>-1</td><td>18</td></tr>
-<tr><td>D/A</td><td>-2</td><td>12</td></tr>
-<tr><td>D/A</td><td>-3</td><td>6</td></tr>
-
-<tr><td colspan="2">Goal</td><td>30</td></tr>
-<tr><td colspan="2">Assist</td><td>15</td></tr>
-</table>
-</div>
-</body>
-</html>
+<p>The teams are split into quartiles based on league position at
